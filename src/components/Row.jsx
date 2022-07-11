@@ -30,7 +30,7 @@ const Row = ({ title, fetchURL, rowID}) => {
         <h2 className='text-white font-bold md:text-xl p-4'>{title}</h2>
         <div className='relative flex items-center group'>
         <MdChevronLeft onClick={slideLeft} size={40} className='bg-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block' />
-            <div id={'slider' + rowID} className='w-full left-0 h-full scrollbar-hide overflow-x-scroll whitespace-nowrap scroll-smooth relative'>
+            <div id={'slider' + rowID} className='w-full left-0 h-full scrollbar-hide overflow-x-hidden whitespace-nowrap scroll-smooth relative'>
                 {movies.map((item, id) =>(
                     <Movie key={id} item={item} />
                 ))}

@@ -1,4 +1,4 @@
-const key = process.env.API_KEY
+const key = process.env.API_KEY || '97f7e6241079c55880f715fea879c393'
 
 
 const requests = {

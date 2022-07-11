@@ -7,7 +7,7 @@ const Main = () => {
 
     const movie = movies[Math.floor(Math.random() * movies.length)]
 
-    const str = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis ex sit amet mauris gravida, vitae mattis tellus tincidunt. Aenean vitae efficitur nulla, ut hendrerit mauris. Duis et nisi eget sem porttitor convallis. Phasellus ante nunc, ullamcorper at felis id, elementum commodo turpis. Vivamus porttitor porttitor tellus, a luctus erat tristique ut. In quis lectus quis lectus condimentum condimentum quis a est. Etiam pellentesque leo orci, ac interdum eros dignissim eget. Nulla elementum justo sed orci rutrum, et pulvinar est bibendum. Etiam auctor sollicitudin quam, non lobortis lorem hendrerit in. Mauris vitae tortor a eros dignissim pharetra porta nec nunc. Phasellus sed ante ut tellus tincidunt lacinia eu eget dui.'
+    // const str = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis ex sit amet mauris gravida, vitae mattis tellus tincidunt. Aenean vitae efficitur nulla, ut hendrerit mauris. Duis et nisi eget sem porttitor convallis. Phasellus ante nunc, ullamcorper at felis id, elementum commodo turpis. Vivamus porttitor porttitor tellus, a luctus erat tristique ut. In quis lectus quis lectus condimentum condimentum quis a est. Etiam pellentesque leo orci, ac interdum eros dignissim eget. Nulla elementum justo sed orci rutrum, et pulvinar est bibendum. Etiam auctor sollicitudin quam, non lobortis lorem hendrerit in. Mauris vitae tortor a eros dignissim pharetra porta nec nunc. Phasellus sed ante ut tellus tincidunt lacinia eu eget dui.'
 
     useEffect(() => {
     axios.get(requests.requestPopular)
@@ -16,11 +16,8 @@ const Main = () => {
         })
     }, [])
 
-    const truncateString = (str, num) => {
-        if(str.length > num ) {
-            return str.slice(0, num) + '...'
-        } else return str;
-    }
+
+    
     
   return (
     <div className='w-full h-[550px] text-white'>
@@ -34,7 +31,7 @@ const Main = () => {
                 <button className='border text-white ml-4 border-gray-300 py-2 px-5'>Watch Later</button>
             </div>
             <p className='text-gray-400 text-sm'>Released: {movie?.release_date}</p>
-            <p className='w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200'>{truncateString(str, 150)} </p>
+            <p className='w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200'>{movie?.overview} </p>
         </div>
         </div>
     </div>
